@@ -1,8 +1,28 @@
 # DataJamboBukoba
-Contains the data for the data dive
+Written by ChristopherCosler
 
-Access the data in R for example via
+This folder contains the Jambo Bukoba data for DSSG data dive. Note that two of the datasets  are CSV and one is a zipped csv due to its size.
 
-  library(RCurl)
+## Access CSV
+If you want to access the data directly with R, for http this usually works.
+
+```R
+df <- read.csv("http://raw.githubusercontent.com/ChristopherCosler/DataJamboBukoba/master/SchoolLevel.csv")
+```
+
+Sometimes https causes trouble, then do
+
+```R
+library(RCurl)
   x <- getURL("https://raw.githubusercontent.com/ChristopherCosler/DataJamboBukoba/master/SchoolLevel.csv")
   y <- read.csv(text = x)
+```
+
+## Acess ZIP
+```R
+If you want to access the csv in the zip file directly with R, do this.
+temp <- tempfile()
+download.file("https://github.com/ChristopherCosler/DataJamboBukoba/raw/master/StudentLevel.zip",temp)
+data <- read.csv(unz(temp, "Student Level.csv"))
+unlink(temp)
+```  
