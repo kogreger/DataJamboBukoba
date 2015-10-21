@@ -18,7 +18,7 @@ library(RCurl)
   y <- read.csv(text = x)
 ```
 
-## Acess ZIP
+## Access ZIP
 ```R
 If you want to access the csv in the zip file directly with R, do this.
 temp <- tempfile()
