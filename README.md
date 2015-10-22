@@ -23,6 +23,6 @@ library(RCurl)
 If you want to access the csv in the zip file directly with R, do this.
 temp <- tempfile()
 download.file("https://github.com/ChristopherCosler/DataJamboBukoba/raw/master/StudentLevel.zip",temp)
-data <- read.csv(unz(temp, "Student Level.csv"), sep=";")
+data <- read.csv(unz(temp, "StudentLevel.csv"), sep=";")
 unlink(temp)
 ```  
